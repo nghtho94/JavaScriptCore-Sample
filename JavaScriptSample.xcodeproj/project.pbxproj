@@ -12,6 +12,11 @@
 		CB22B5ED1D7A0C2700EFA05F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB22B5EB1D7A0C2700EFA05F /* Main.storyboard */; };
 		CB22B5EF1D7A0C2700EFA05F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB22B5EE1D7A0C2700EFA05F /* Assets.xcassets */; };
 		CB22B5F21D7A0C2700EFA05F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB22B5F01D7A0C2700EFA05F /* LaunchScreen.storyboard */; };
+		CB24995D1D7DAEA10064585E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24995C1D7DAEA10064585E /* WebViewController.swift */; };
+		CB24995F1D7DC20E0064585E /* JSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24995E1D7DC20E0064585E /* JSService.swift */; };
+		CB2499611D7DC4730064585E /* common.js in Resources */ = {isa = PBXBuildFile; fileRef = CB2499601D7DC4730064585E /* common.js */; };
+		CB2499631D7DCAC20064585E /* JS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2499621D7DCAC20064585E /* JS.swift */; };
+		CB7E0C7B1D81F550007E5EDA /* Web in Resources */ = {isa = PBXBuildFile; fileRef = CB7E0C7A1D81F550007E5EDA /* Web */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		CB22B5EE1D7A0C2700EFA05F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB22B5F11D7A0C2700EFA05F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB22B5F31D7A0C2700EFA05F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB24995C1D7DAEA10064585E /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		CB24995E1D7DC20E0064585E /* JSService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSService.swift; sourceTree = "<group>"; };
+		CB2499601D7DC4730064585E /* common.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = common.js; path = ../common.js; sourceTree = "<group>"; };
+		CB2499621D7DCAC20064585E /* JS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JS.swift; sourceTree = "<group>"; };
+		CB7E0C7A1D81F550007E5EDA /* Web */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Web; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +64,27 @@
 		CB22B5E61D7A0C2700EFA05F /* JavaScriptSample */ = {
 			isa = PBXGroup;
 			children = (
+				CB7E0C7A1D81F550007E5EDA /* Web */,
+				CB2499601D7DC4730064585E /* common.js */,
 				CB22B5E71D7A0C2700EFA05F /* AppDelegate.swift */,
-				CB22B5E91D7A0C2700EFA05F /* ViewController.swift */,
+				CB24995E1D7DC20E0064585E /* JSService.swift */,
+				CB2499621D7DCAC20064585E /* JS.swift */,
+				CBF1BFCC1D7F26B9008B58DC /* VC */,
 				CB22B5EB1D7A0C2700EFA05F /* Main.storyboard */,
 				CB22B5EE1D7A0C2700EFA05F /* Assets.xcassets */,
 				CB22B5F01D7A0C2700EFA05F /* LaunchScreen.storyboard */,
 				CB22B5F31D7A0C2700EFA05F /* Info.plist */,
 			);
 			path = JavaScriptSample;
+			sourceTree = "<group>";
+		};
+		CBF1BFCC1D7F26B9008B58DC /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				CB22B5E91D7A0C2700EFA05F /* ViewController.swift */,
+				CB24995C1D7DAEA10064585E /* WebViewController.swift */,
+			);
+			name = VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,7 +146,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB22B5F21D7A0C2700EFA05F /* LaunchScreen.storyboard in Resources */,
+				CB2499611D7DC4730064585E /* common.js in Resources */,
 				CB22B5EF1D7A0C2700EFA05F /* Assets.xcassets in Resources */,
+				CB7E0C7B1D81F550007E5EDA /* Web in Resources */,
 				CB22B5ED1D7A0C2700EFA05F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,7 +160,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB24995F1D7DC20E0064585E /* JSService.swift in Sources */,
 				CB22B5EA1D7A0C2700EFA05F /* ViewController.swift in Sources */,
+				CB24995D1D7DAEA10064585E /* WebViewController.swift in Sources */,
+				CB2499631D7DCAC20064585E /* JS.swift in Sources */,
 				CB22B5E81D7A0C2700EFA05F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +314,7 @@
 				CB22B5F81D7A0C2700EFA05F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
