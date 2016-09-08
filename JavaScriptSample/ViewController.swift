@@ -8,20 +8,29 @@
 
 import UIKit
 
+
+
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    func test(){
+    let javaScript = JSService()
+    
+    @IBAction func callWebviewController(sender: AnyObject) {
+        javaScript.callWebView()
         
     }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.pushToWebViewVC(_:)), name: "pushWebView", object: nil)
+    }
+    
+    func pushToWebViewVC(notification: NSNotification){
+        let vc = self.navigationController?.storyboard?.instantiateViewControllerWithIdentifier("WebViewController") as! WebViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+
 }
 

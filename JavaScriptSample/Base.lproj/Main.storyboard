@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aEi-N4-Us4">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="JavaScriptSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,120 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1J-OU-VwE">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Call"/>
+                                <connections>
+                                    <action selector="callWebviewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cs2-Ig-zI2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.47138634920349426" green="0.60934337746365375" blue="0.83439503205128196" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="D1J-OU-VwE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7WF-qv-V1Y"/>
+                            <constraint firstItem="D1J-OU-VwE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="z93-Ok-CWz"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="D1J-OU-VwE"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="7WF-qv-V1Y"/>
+                                <exclude reference="z93-Ok-CWz"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="D1J-OU-VwE"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="7WF-qv-V1Y"/>
+                                <include reference="z93-Ok-CWz"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="pgH-QR-uVZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1126.5" y="282"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="Dle-lq-HQb">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="pXN-oP-K25" customClass="WebViewController" customModule="JavaScriptSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eh6-QO-zWt"/>
+                        <viewControllerLayoutGuide type="bottom" id="R5D-d8-IdV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3WH-VI-LvV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="De5-Rt-e4U">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pXN-oP-K25" id="W9A-L4-AtB"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="De5-Rt-e4U" firstAttribute="top" secondItem="eh6-QO-zWt" secondAttribute="bottom" id="Plx-5B-tXc"/>
+                            <constraint firstAttribute="trailing" secondItem="De5-Rt-e4U" secondAttribute="trailing" id="hZI-pA-ZH5"/>
+                            <constraint firstItem="De5-Rt-e4U" firstAttribute="leading" secondItem="3WH-VI-LvV" secondAttribute="leading" id="nyn-nI-72h"/>
+                            <constraint firstItem="R5D-d8-IdV" firstAttribute="top" secondItem="De5-Rt-e4U" secondAttribute="bottom" id="yyM-0Z-I2G"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="De5-Rt-e4U"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="yyM-0Z-I2G"/>
+                                <exclude reference="Plx-5B-tXc"/>
+                                <exclude reference="hZI-pA-ZH5"/>
+                                <exclude reference="nyn-nI-72h"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="De5-Rt-e4U"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="yyM-0Z-I2G"/>
+                                <include reference="Plx-5B-tXc"/>
+                                <include reference="hZI-pA-ZH5"/>
+                                <include reference="nyn-nI-72h"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="De5-Rt-e4U" id="MN8-lo-0yb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f1Z-A4-R5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2173.5" y="376.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DWb-oL-dsD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aEi-N4-Us4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JYf-CE-CtK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9Be-Df-dvG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jNG-aA-Mgn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="150" y="927"/>
         </scene>
     </scenes>
 </document>
