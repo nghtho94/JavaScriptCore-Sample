@@ -12,7 +12,7 @@ Use JavaScriptCore to push to WebViewController from ViewController and store th
 
 
 JAVA SCRIPT CORE
-
+//Edit for VNese
 
 <!--javaScriptCore sử dụng JSContext để thực hiện tương tác với code java -->
 <!--Có 2 loại:-->
